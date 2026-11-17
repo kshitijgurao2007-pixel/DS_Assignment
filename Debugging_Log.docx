@@ -34,3 +34,7 @@ Commit 6 – Display Function
 
 I implemented the display function to show all 17 hash table positions. I checked that empty positions displayed NULL and occupied positions displayed their linked-list elements in insertion order.
 
+Commit 7 – Memory Management and Final Testing
+
+I implemented memory cleanup using delete to release dynamically allocated nodes. I compiled and executed the final program and compared its output with my manually calculated hash table. The final result was checked for correct hash indices and collision handling.
+

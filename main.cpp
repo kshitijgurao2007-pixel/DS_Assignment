@@ -94,6 +94,25 @@ void display()
     cout << "================================\n";
 }
 
+void freeTable()
+{
+    for (int i = 0; i < M; i++)
+    {
+        Node* temp = hashTable[i];
+
+        while (temp != nullptr)
+        {
+            Node* nextNode = temp->next;
+
+            delete temp;
+
+            temp = nextNode;
+        }
+
+        hashTable[i] = nullptr;
+    }
+}
+
 int main()
 {
     int values[20] =
@@ -103,8 +122,12 @@ int main()
         57, 70, 83, 96, 9,
         22, 35, 48, 61, 74
     };
-    
-    cout << "\nINSERTING ALL DATASET VALUES\n";
+
+    cout << "MANGO VARIETIES HASH TABLE\n";
+    cout << "PRN: 202501100027\n";
+    cout << "Hash Table Size: " << M << endl;
+
+    cout << "\nINSERTION PROCESS\n";
 
     for (int i = 0; i < 20; i++)
     {
@@ -113,26 +136,9 @@ int main()
 
     display();
 
-    cout << "PERSONALIZED DATASET" << endl;
-    cout << "PRN: 202501100027" << endl;
+    freeTable();
 
-    cout << "Dataset: ";
-
-    for (int i = 0; i < 20; i++)
-    {
-        cout << values[i] << " ";
-    }
-
-    cout << "\nHASH FUNCTION TEST\n";
-
-    for (int i = 0; i < 20; i++)
-    {
-        cout << "Key: " << values[i]
-            << " Hash Index: "
-            << midSquareHash(values[i]) << endl;
-    }
-
-    cout << endl;
+    cout << "\nMemory released successfully.\n";
 
     return 0;
 }

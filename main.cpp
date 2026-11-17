@@ -15,6 +15,14 @@
 using namespace std;
 const int M = 17;
 
+struct Node
+{
+    int key;
+    Node* next;
+};
+
+Node* hashTable[M] = {nullptr};
+
 int midSquareHash(int key)
 {
     long long square = (long long)key * key;

@@ -1,0 +1,15 @@
+DEBUGGING LOG
+
+Question 2 – Hash Table Implementation
+
+PRN: 202501100027
+
+Scenario: Mango Varieties
+
+Hash Function: Mid-Square
+
+Collision Strategy: Separate Chaining
+
+Commit 1 – Project Initialization
+
+I created the project folder and initialized the Git repository. I added the personalized dataset of 20 values generated using the seed 27. I checked the generated values against the given formula to ensure that the dataset was correct.

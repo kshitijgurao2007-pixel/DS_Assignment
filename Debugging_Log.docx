@@ -25,3 +25,8 @@ I created a Node structure containing a key and a pointer to the next node. I al
 Commit 4 – Initial Insertion Implementation
 
 I implemented the insertion function for storing keys at their calculated hash indices. During testing, I considered directly assigning a new node to an occupied index. This approach would overwrite the existing node and lose previously inserted data. I abandoned it and proceeded to implement proper collision handling.
+
+Commit 5 – Separate Chaining Implementation
+
+I implemented separate chaining using linked lists. When two or more keys generated the same hash index, the program traversed the existing chain and inserted the new node at the end. I verified the collision chains using the personalized dataset.
+

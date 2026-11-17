@@ -32,7 +32,7 @@ int midSquareHash(int key)
     return middle % M;
 }
 
-void insertWithoutCollision(int key)
+void insert(int key)
 {
     int index = midSquareHash(key);
 
@@ -41,7 +41,21 @@ void insertWithoutCollision(int key)
     newNode->key = key;
     newNode->next = nullptr;
 
-    hashTable[index] = newNode;
+    if (hashTable[index] == nullptr)
+    {
+        hashTable[index] = newNode;
+    }
+    else
+    {
+        Node* temp = hashTable[index];
+
+        while (temp->next != nullptr)
+        {
+            temp = temp->next;
+        }
+
+        temp->next = newNode;
+    }
 
     cout << "Inserted " << key
          << " at index " << index << endl;
@@ -57,11 +71,11 @@ int main()
         22, 35, 48, 61, 74
     };
     
-    cout << "\nINSERTION TEST\n";
+    cout << "\nCOLLISION TEST\n";
 
-    insertWithoutCollision(values[0]);
-    insertWithoutCollision(values[1]);
-    insertWithoutCollision(values[2]);
+    insert(27);
+    insert(96);
+    insert(61);
 
     cout << "PERSONALIZED DATASET" << endl;
     cout << "PRN: 202501100027" << endl;

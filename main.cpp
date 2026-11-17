@@ -61,6 +61,39 @@ void insert(int key)
          << " at index " << index << endl;
 }
 
+void display()
+{
+    cout << "\n========== HASH TABLE ==========\n";
+
+    for (int i = 0; i < M; i++)
+    {
+        cout << "Index " << i << " : ";
+
+        Node* temp = hashTable[i];
+
+        if (temp == nullptr)
+        {
+            cout << "NULL";
+        }
+
+        while (temp != nullptr)
+        {
+            cout << temp->key;
+
+            if (temp->next != nullptr)
+            {
+                cout << " -> ";
+            }
+
+            temp = temp->next;
+        }
+
+        cout << endl;
+    }
+
+    cout << "================================\n";
+}
+
 int main()
 {
     int values[20] =
@@ -71,11 +104,14 @@ int main()
         22, 35, 48, 61, 74
     };
     
-    cout << "\nCOLLISION TEST\n";
+    cout << "\nINSERTING ALL DATASET VALUES\n";
 
-    insert(27);
-    insert(96);
-    insert(61);
+    for (int i = 0; i < 20; i++)
+    {
+        insert(values[i]);
+    }
+
+    display();
 
     cout << "PERSONALIZED DATASET" << endl;
     cout << "PRN: 202501100027" << endl;

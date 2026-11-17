@@ -30,3 +30,7 @@ Commit 5 – Separate Chaining Implementation
 
 I implemented separate chaining using linked lists. When two or more keys generated the same hash index, the program traversed the existing chain and inserted the new node at the end. I verified the collision chains using the personalized dataset.
 
+Commit 6 – Display Function
+
+I implemented the display function to show all 17 hash table positions. I checked that empty positions displayed NULL and occupied positions displayed their linked-list elements in insertion order.
+

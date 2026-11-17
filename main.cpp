@@ -13,6 +13,16 @@
 
 #include <iostream>
 using namespace std;
+const int M = 17;
+
+int midSquareHash(int key)
+{
+    long long square = (long long)key * key;
+
+    int middle = (square / 10) % 100;
+
+    return middle % M;
+}
 
 int main()
 {
@@ -32,6 +42,15 @@ int main()
     for (int i = 0; i < 20; i++)
     {
         cout << values[i] << " ";
+    }
+
+    cout << "\nHASH FUNCTION TEST\n";
+
+    for (int i = 0; i < 20; i++)
+    {
+        cout << "Key: " << values[i]
+            << " Hash Index: "
+            << midSquareHash(values[i]) << endl;
     }
 
     cout << endl;

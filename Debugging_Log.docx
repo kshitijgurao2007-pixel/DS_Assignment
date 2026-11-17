@@ -21,3 +21,7 @@ I implemented the mid-square hash function. Initially, I needed to ensure that t
 Commit 3 – Linked List Implementation
 
 I created a Node structure containing a key and a pointer to the next node. I also initialized the hash table with 17 empty positions. I tested the linked-list structure to ensure that nodes could be connected correctly.
+
+Commit 4 – Initial Insertion Implementation
+
+I implemented the insertion function for storing keys at their calculated hash indices. During testing, I considered directly assigning a new node to an occupied index. This approach would overwrite the existing node and lose previously inserted data. I abandoned it and proceeded to implement proper collision handling.
